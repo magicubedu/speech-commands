@@ -1,5 +1,5 @@
 {
-  "extends": "../tsconfig",
+  "extends": "../tsconfig.test",
   "include": [
     "src/"
   ],
@@ -7,8 +7,8 @@
     "node_modules/"
   ],
   "compilerOptions": {
+    "importHelpers": true,
     "outDir": "./dist",
-    "downlevelIteration": true,
-	"skipLibCheck": true
+    "downlevelIteration": true
   }
 }
