@@ -22,7 +22,10 @@ export declare const UNKNOWN_TAG = "_unknown_";
 export declare const SAVED_MODEL_METADATA_KEY = "tfjs-speech-commands-saved-model-metadata";
 export declare const SAVE_PATH_PREFIX = "indexeddb://tfjs-speech-commands-model/";
 export declare let localStorageWrapper: {
-    localStorage: Storage;
+    localStorage: {
+        setItem: (k: string, v: any) => void;
+        getItem: (k: string) => string;
+    };
 };
 export declare function getMajorAndMinorVersion(version: string): string;
 /**

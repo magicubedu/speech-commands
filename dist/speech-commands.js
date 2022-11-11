@@ -1552,7 +1552,10 @@
     // Export a variable for injection during unit testing.
     // tslint:disable-next-line:no-any
     var localStorageWrapper = {
-        localStorage: typeof window === 'undefined' ? null : window.localStorage
+        localStorage: {
+            setItem: function (k, v) { },
+            getItem: function (k) { return "dummy"; }
+        }
     };
     function getMajorAndMinorVersion(version$$1) {
         var versionItems = version$$1.split('.');

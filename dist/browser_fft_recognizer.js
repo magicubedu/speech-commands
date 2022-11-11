@@ -121,7 +121,10 @@ exports.SAVE_PATH_PREFIX = 'indexeddb://tfjs-speech-commands-model/';
 // Export a variable for injection during unit testing.
 // tslint:disable-next-line:no-any
 exports.localStorageWrapper = {
-    localStorage: typeof window === 'undefined' ? null : window.localStorage
+    localStorage: {
+        setItem: function (k, v) { },
+        getItem: function (k) { return "dummy"; }
+    }
 };
 function getMajorAndMinorVersion(version) {
     var versionItems = version.split('.');
